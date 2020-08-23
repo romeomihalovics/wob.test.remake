@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "ftp.url",
+      "type": "java.lang.String",
+      "description": "FTP URL."
+    },
+    {
+      "name": "ftp.user",
+      "type": "java.lang.String",
+      "description": "FTP Username."
+    },
+    {
+      "name": "ftp.password",
+      "type": "java.lang.String",
+      "description": "FTP Password."
+    }
+  ] }

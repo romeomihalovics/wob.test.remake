@@ -1,0 +1,20 @@
+CREATE TABLE `listing` (
+  `id` varchar(36) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL,
+  `inventory_id` varchar(36) NOT NULL,
+  `listing_price` double NOT NULL,
+  `currency` text NOT NULL,
+  `quantity` int NOT NULL,
+  `listing_status` int NOT NULL,
+  `marketplace` int NOT NULL,
+  `upload_time` date NOT NULL,
+  `owner_email` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `inventory_id_idx` (`inventory_id`),
+  KEY `status_idx` (`listing_status`),
+  KEY `market_idx` (`marketplace`),
+  CONSTRAINT `location` FOREIGN KEY (`inventory_id`) REFERENCES `location` (`id`),
+  CONSTRAINT `market` FOREIGN KEY (`marketplace`) REFERENCES `marketplace` (`id`),
+  CONSTRAINT `status` FOREIGN KEY (`listing_status`) REFERENCES `listing_status` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

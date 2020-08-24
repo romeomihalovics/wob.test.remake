@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     serverUrl: '',
-    currentlySyncing: false
+    currentlySyncing: false,
+    loadingReports: true,
+    reportData: {}
   },
   mutations: {
     setServerUrl (state, data) {
@@ -14,6 +16,12 @@ export default new Vuex.Store({
     },
     setCurrentlySyncing (state, data) {
       state.currentlySyncing = data
+    },
+    setLoadingReports (state, data) {
+      state.loadingReports = data
+    },
+    setReportData (state, data) {
+      state.reportData = data
     }
   },
   actions: {

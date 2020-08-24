@@ -8,6 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueToastr from 'vue-toastr'
+import 'themify-icons-sass/themify-icons/_themify-icons.scss'
 
 Vue.use(VueToastr)
 Vue.use(VueAxios, axios)

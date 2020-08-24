@@ -7,7 +7,7 @@
 <script>
 export default {
   beforeMount () {
-    this.$store.commit('setServerUrl', 'http://192.168.1.6:8080/')
+    this.$store.commit('setServerUrl', 'http://localhost:8080/')
   },
   name: 'App'
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,18 +45,23 @@ public class ResultController {
         this.createReportService = createReportService;
     }
 
+    @CrossOrigin
     @GetMapping("/listings")
     public List<Listing> getAllListings() { return listingRepository.findAll(); }
 
+    @CrossOrigin
     @GetMapping("/marketplaces")
     public List<Marketplace> getAllMarketplace() { return marketplaceRepository.findAll(); }
 
+    @CrossOrigin
     @GetMapping("/locations")
     public List<Location> getAllLocation() { return locationRepository.findAll(); }
 
+    @CrossOrigin
     @GetMapping("/listingstats")
     public List<ListingStatus> getAllListingStatus() { return listingStatusRepository.findAll(); }
 
+    @CrossOrigin
     @GetMapping(value = "/report", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getReport() throws IOException, ParseException {
         return new ResponseEntity<>(createReportService.createReport().toMap(), HttpStatus.OK);

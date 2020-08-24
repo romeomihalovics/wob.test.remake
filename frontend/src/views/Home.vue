@@ -1,7 +1,10 @@
 <template>
-  <div class="home d-flex justify-content-center align-items-center">
-    <syncButton/>
-    <viewReportButton/>
+  <div class="home d-flex justify-content-center align-items-center flex-column">
+    <h3>Wob Test Remake</h3>
+    <div class="my-3">
+      <syncButton/>
+      <viewReportButton/>
+    </div>
   </div>
 </template>
 

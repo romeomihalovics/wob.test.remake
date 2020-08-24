@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    serverUrl: ''
+    serverUrl: '',
+    currentlySyncing: false
   },
   mutations: {
     setServerUrl (state, data) {
       state.serverUrl = data
+    },
+    setCurrentlySyncing (state, data) {
+      state.currentlySyncing = data
     }
   },
   actions: {

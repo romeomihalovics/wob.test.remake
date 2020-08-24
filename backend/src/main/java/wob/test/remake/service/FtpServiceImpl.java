@@ -23,6 +23,7 @@ public class FtpServiceImpl implements FtpService {
         this.ftpConfig = ftpConfig;
     }
 
+    @Override
     public void uploadReport() throws IOException {
         client.connect(ftpConfig.getUrl());
         client.login(ftpConfig.getUser(), ftpConfig.getPassword());

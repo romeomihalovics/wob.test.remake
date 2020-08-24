@@ -9,6 +9,7 @@ public class ReportRepositoryImpl implements ReportRepositoryCustom {
     @PersistenceContext
     private EntityManager em;
 
+    @Override
     public Report getReportByDate(int year, int month) {
         Query query = em.createNativeQuery("{call report_by_date(?,?)}", Report.class)
                 .setParameter(1, year)
